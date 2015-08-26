@@ -1,6 +1,7 @@
 FROM centos:centos6
 
 MAINTAINER remoting <remoting@qq.com>
+
 RUN mkdir /java && cd /java \
     && yum install -y wget \
     && yum install -y tar \
@@ -25,8 +26,6 @@ EXPOSE 22
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 20880
-
-
 
 USER java
 

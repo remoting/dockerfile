@@ -24,4 +24,5 @@ EXPOSE 22
 EXPOSE 8080
 
 USER java
+
 CMD ["/bin/bash"]

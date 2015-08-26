@@ -1,10 +1,11 @@
 FROM centos:centos6
 
 MAINTAINER remoting <remoting@qq.com>
-RUN mkdir /java && cd /java
-RUN yum install -y wget
-RUN cd /java && wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz
-RUN cd /java && tar zxvf jdk-8u60-linux-x64.tar
+RUN mkdir /java && cd /java \
+    && yum install -y wget \
+    && yum install -y tar \
+    && cd /java && wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz \
+    && cd /java && tar zxvf jdk-8u60-linux-x64.tar
 
 
 ENV LANG en_US.UTF-8

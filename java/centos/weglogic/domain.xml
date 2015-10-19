@@ -1,0 +1,24 @@
+ <?xml version="1.0" encoding="UTF-8" ?> 
+ <domain-template-descriptor> 
+  <input-fields> 
+    <data-value name="BEAHOME"                 value="/java/weblogic"  /> 
+    <data-value name="USER_INSTALL_DIR"        value="/java/weblogic" /> 
+    <data-value name="RUN_DOMAIN_WIZARD"       value="true"     /> 
+    <data-value name="domain.directory"        value="/java/domains/mydomain" />
+    <data-value name="C_domainName"            value="mydomain" /> 
+    <data-value name="C_serverName"            value="myserver" /> 
+    <data-value name="C_username"              value="weblogic" /> 
+    <data-value name="C_password"              value="weblogic" /> 
+    <data-value name="C_serverListenAddress"   value=""         /> 
+    <data-value name="C_serverListenPort"      value="7001"     /> 
+    <data-value name="C_serverSSLListenPort"   value="7002"     /> 
+ 
+    <data-value name="selectedJar"             value="/java/weblogic/common/templates/domains/wls.jar"  /> 
+ 
+    <data-value name="INSTALL_NT_SERVICE"      value="no"         /> 
+    <data-value name="INSTALL_WINDOWS_STARTUP_MENU" value="no"    /> 
+ 
+    <data-value name="SERVER-RUN-AS" value="Single Server (Standalone Server)" /> 
+ 
+  </input-fields> 
+</domain-template-descriptor>

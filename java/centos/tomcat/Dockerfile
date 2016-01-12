@@ -7,8 +7,9 @@ RUN mkdir -p /java /data/mw_logs
 ADD /tools/jdk-8u60-linux-x64.tar.gz /java/
 ADD /tools/apache-tomcat-7.0.64.tar.gz /java/
 RUN sed -i 's/webapps/\/data\/webapps/' /java/apache-tomcat-7.0.64/conf/server.xml \
-    sed -i 's/port="8080"/port="${DOCKER_PORT}" protocol="org.apache.coyote.http11.Http11NioProtocol"/' /java/apache-tomcat-7.0.64/conf/server.xml \
-    sed -i 's/\/sh/\/sh\nJAVA_OPTS="-DDOCKER_PORT=$DOCKER_PORT"/' /java/apache-tomcat-7.0.64/bin/catalina.sh
+    && sed -i 's/port="8080"/port="${DOCKER_PORT}"/' /java/apache-tomcat-7.0.64/conf/server.xml \
+    && sed -i 's/protocol="HTTP\/1.1"/protocol="org.apache.coyote.http11.Http11NioProtocol"/' /java/apache-tomcat-7.0.64/conf/server.xml \
+    && sed -i 's/\/sh/\/sh\nJAVA_OPTS="-DDOCKER_PORT=$DOCKER_PORT"/' /java/apache-tomcat-7.0.64/bin/catalina.sh
 
 RUN cd /java/apache-tomcat-7.0.64 && rm -rf logs && ln -s /data/mw_logs logs
 

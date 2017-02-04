@@ -2,8 +2,8 @@ FROM centos:centos7
 
 MAINTAINER remoting remoting@qq.com
 
-RUN yum install zip unzip wget tar -y \
-    && wget -O /opt/dockerize.tar.gz https://github.com/jwilder/dockerize/releases/download/v0.2.0/dockerize-linux-amd64-v0.2.0.tar.gz \
+RUN yum install zip unzip wget tar -y --nogpgcheck \
+    && wget -O /opt/dockerize.tar.gz https://github.com/jwilder/dockerize/releases/download/v0.3.0/dockerize-linux-amd64-v0.3.0.tar.gz \
     && tar -zxvf /opt/dockerize.tar.gz -C /usr/bin/ \
     && wget -O /opt/jdk.tar.gz --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz \
     && mkdir -p /opt/java && tar -zxvf /opt/jdk.tar.gz -C /opt/java \

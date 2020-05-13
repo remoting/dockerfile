@@ -14,7 +14,9 @@ ENV NODE_HOME=/usr/local/node \
 ENV PATH=$PATH:$GOROOT/bin:$NODE_HOME/bin
 
 RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-&& ln -s /usr/local/node-v12.16.3-linux-x64 /usr/local/node \
-&& npm install -g yarn cnpm \
-&& yum install openssl git tree unzip zip vim wget -y \
-&& chmod 600 /root/.ssh/config
+  && ln -s /usr/local/node-v12.16.3-linux-x64 /usr/local/node \
+  && npm install -g yarn cnpm \
+  && yum install openssl git tree unzip zip vim wget -y \
+  && chmod 600 /root/.ssh/config \
+  && wget -O /usr/local/bin/gf https://goframe.org/cli/linux_amd64/gf \
+  && chmod +x /usr/local/bin/gf

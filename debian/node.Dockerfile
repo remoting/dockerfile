@@ -5,8 +5,7 @@ WORKDIR /root
 ADD init.sh /root/
 ADD node-v8.17.0-linux-x64.tar.gz /usr/local/
 
-RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-  && chmod +x init.sh && ./init.sh
+RUN chmod +x init.sh && ./init.sh
 
 RUN mv /usr/local/node-v8.17.0-linux-x64 /usr/local/node \
   && ln -s /usr/local/node/bin/node /usr/local/bin \

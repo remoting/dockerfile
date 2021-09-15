@@ -1,14 +1,18 @@
 #!/bin/bash
 
+# sources
 cat <<EOF > /etc/apt/sources.list
 deb http://mirrors.163.com/debian/ bullseye main
 deb-src http://mirrors.163.com/debian/ bullseye main
-deb http://security.debian.org/debian-security bullseye-security main
-deb-src http://security.debian.org/debian-security bullseye-security main
+deb http://mirrors.163.com/debian-security bullseye-security main
+deb-src http://mirrors.163.com/debian-security bullseye-security main
 deb http://mirrors.163.com/debian/ bullseye-updates main
 deb-src http://mirrors.163.com/debian/ bullseye-updates main
 EOF
 
-# 基础工具
-apt update
-apt install apt-transport-https ca-certificates curl wget vim gnupg2 -y
+# timezone
+cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+# base tools
+apt-get update
+apt-get install -y apt-transport-https ca-certificates curl wget vim gnupg2 iproute2 tree git procps

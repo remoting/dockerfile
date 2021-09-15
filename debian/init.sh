@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat <<EOF > /etc/apt/sources.list
 deb http://mirrors.163.com/debian/ bullseye main
 deb-src http://mirrors.163.com/debian/ bullseye main

@@ -10,4 +10,4 @@ deb-src http://mirrors.163.com/debian/ bullseye-updates main
 EOF
 
 # 基础工具
-apt install apt-transport-https ca-certificates curl wget vim gnupg2
+apt install apt-transport-https ca-certificates curl wget vim gnupg2 -y

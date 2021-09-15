@@ -15,4 +15,4 @@ cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # base tools
 apt-get update
-apt-get install -y apt-transport-https ca-certificates curl wget vim gnupg2 iproute2 tree git procps apt-utils
+apt-get install -y apt-utils apt-transport-https ca-certificates curl wget vim gnupg2 iproute2 tree git procps
